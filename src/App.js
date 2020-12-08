@@ -17,10 +17,10 @@ function WelcomeMessage(props) {
   return (<p>Welcome, {props.username}</p>)
 }
 
-function UserInfo(props) {
+function UserInfo({ auth}) {
   return (
     <>
-      {props.auth ? <WelcomeMessage username="Terry" /> : <LoginLink />}
+      {auth ? <WelcomeMessage username="Terry" /> : <LoginLink />}
     </>
   );
 }
