@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 function Header(props) {
@@ -9,18 +9,19 @@ function Header(props) {
   );
 }
 
-function LoginLink() {
-  return (<a href="#">Login</a>)
+function LoginLink({ onClick }) {
+  return (<a href="#" onClick={ onClick }>Login</a>)
 }
 
 function WelcomeMessage(props) {
   return (<p>Welcome, {props.username}</p>)
 }
 
-function UserInfo({ auth}) {
+function UserInfo() {
+  const [auth, setAuth] = useState(false);
   return (
     <>
-      {auth ? <WelcomeMessage username="Terry" /> : <LoginLink />}
+      {auth ? <WelcomeMessage username="Terry" /> : <LoginLink onClick={() => setAuth(true)} />}
     </>
   );
 }
@@ -49,7 +50,7 @@ export default function App() {
   return (
     <>
       <Header name="Terry" />
-      <UserInfo auth={false} />
+      <UserInfo />
       <Main dishes={dishObjects} />
       <Footer year={new Date().getFullYear()} />
     </>
