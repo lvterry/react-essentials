@@ -1,3 +1,3 @@
-# react-u6hwpg
+# A learning project for React.js
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-u6hwpg)
+[Edited with StackBlitz ⚡️](https://stackblitz.com/edit/react-u6hwpg)
