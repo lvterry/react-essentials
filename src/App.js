@@ -9,6 +9,22 @@ function Header(props) {
   );
 }
 
+function LoginLink() {
+  return (<a href="#">Login</a>)
+}
+
+function WelcomeMessage(props) {
+  return (<p>Welcome, {props.username}</p>)
+}
+
+function UserInfo(props) {
+  return (
+    <>
+      {props.auth ? <WelcomeMessage username="Terry" /> : <LoginLink />}
+    </>
+  );
+}
+
 function Main(props) {
   return (
     <section>
@@ -33,6 +49,7 @@ export default function App() {
   return (
     <>
       <Header name="Terry" />
+      <UserInfo auth={false} />
       <Main dishes={dishObjects} />
       <Footer year={new Date().getFullYear()} />
     </>
